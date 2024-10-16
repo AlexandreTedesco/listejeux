@@ -1,0 +1,55 @@
+.page-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.game-image {
+  width: 100%; /* Ajustez la taille de l'image */
+  max-width: 400px; /* Limite la taille maximale de l'image */
+  height: auto;
+  border-radius: 8px;
+}
+
+.info-section {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #3b3b3b;
+}
+
+h2 {
+  margin-top: 10px;
+  color: #333;
+}
+
+h3 {
+  margin-top: 20px;
+  color: #555;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Pour éviter les espaces entre les cellules */
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc; /* Bordure autour des cellules */
+  text-align: left; /* Alignement à gauche */
+}
+
+th {
+  background-color: #3b3b3b; /* Couleur de fond pour les en-têtes */
+}
