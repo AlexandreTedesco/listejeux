@@ -82,3 +82,24 @@ h1 {
   background-color: #0056b3;
 }
 
+.platforms {
+  display: flex; /* Utiliser flexbox pour aligner les éléments */
+  flex-wrap: wrap; /* Permettre aux éléments de passer à la ligne si nécessaire */
+  margin-top: 10px; /* Espacement au-dessus des plateformes */
+}
+
+.platforms a {
+  margin-right: 8px; /* Espacement entre les noms des plateformes */
+  text-decoration: none; /* Supprimer le soulignement des liens */
+  color: #ffffff; /* Couleur du texte */
+  background-color: #333333; /* Couleur de fond gris anthracite */
+  border-radius: 3px; /* Coins arrondis */
+  padding: 3px 6px; /* Espacement interne réduit pour un bouton plus petit */
+  font-size: 12px; /* Taille de police plus petite */
+  transition: background-color 0.3s, color 0.3s; /* Transition pour l'effet au survol */
+}
+
+.platforms a:hover {
+  background-color: #555555; /* Couleur de fond au survol */
+  color: white; /* Couleur du texte au survol */
+}

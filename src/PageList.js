@@ -20,12 +20,12 @@ function PageList() {
   useEffect(() => {
     const results = games.filter(game => {
       const matchesSearchTerm = game.name.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesPlatform = selectedPlatform ? game.platforms.some(platform => platform.platform.name === selectedPlatform) : true;
+      const matchesPlatform = selectedPlatform ? game.platforms && game.platforms.some(platform => platform.platform.name === selectedPlatform) : true;
       return matchesSearchTerm && matchesPlatform;
     });
     setFilteredGames(results);
     
-    if (results.length < 27 && page * 9 < results.length) {
+    if (page * 9 < results.length && page * 9 < 27) {
       setShowMore(true);
     } else {
       setShowMore(false);
