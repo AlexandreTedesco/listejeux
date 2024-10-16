@@ -1,8 +1,5 @@
-// src/styles/styles.scss
+@import '~bootstrap/scss/bootstrap';
 
-@import '~bootstrap/scss/bootstrap'; // Importer Bootstrap si nécessaire
-
-// Variables SCSS
 $background-color: #1b1b1b;
 $text-color: #fff;
 $primary-color: #e65159;
@@ -11,12 +8,11 @@ $card-background: #333;
 $border-radius: 8px;
 $secondary-text-color: #aaa;
 
-// Mixins
 @mixin transition($property) {
   transition: $property 0.3s ease;
 }
 
-// Styles globaux
+
 body {
   background-color: $background-color;
   color: $text-color;
@@ -25,7 +21,6 @@ body {
   padding: 0;
 }
 
-// En-tête
 header {
   padding: 40px 20px;
   text-align: center;
@@ -58,7 +53,6 @@ header {
   }
 }
 
-// Bouton de filtre
 .filter {
   text-align: center;
   margin: 20px 0;
@@ -74,17 +68,15 @@ header {
   }
 }
 
-// Styles de la liste de jeux
 .game-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); // Trois colonnes
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-// Styles de la carte de jeu
 .game-card {
   background-color: $card-background;
   color: $text-color;
@@ -93,7 +85,7 @@ header {
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  height: 300px; // Hauteur fixe pour toutes les cartes
+  height: 300px; 
 
   &:hover {
     transform: scale(1.05);
@@ -102,8 +94,8 @@ header {
 
   .game-image {
     width: 100%;
-    height: 200px; // Hauteur fixe pour l'image
-    object-fit: cover; // Adapter l'image à la taille de la carte
+    height: 200px; 
+    object-fit: cover; 
   }
 
   .game-details {
@@ -126,7 +118,6 @@ header {
   }
 }
 
-// Bouton "Show More"
 .show-more {
   background-color: $primary-color;
   color: $text-color;
@@ -145,7 +136,7 @@ header {
   }
 }
 
-// Pied de page
+
 footer {
   text-align: center;
   padding: 20px 0;
@@ -154,22 +145,22 @@ footer {
   font-size: 0.9rem;
 }
 
-// Liens internes
+
 a {
   color: $primary-color;
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline; // Souligner au hover
-    color: $secondary-color; // Changer de couleur au hover
+    text-decoration: underline; 
+    color: $secondary-color; 
     @include transition(color);
   }
 }
 
-// Responsive design
+
 @media (max-width: 768px) {
   .game-list {
-    grid-template-columns: repeat(2, 1fr); // Deux colonnes sur mobile
+    grid-template-columns: repeat(2, 1fr); 
   }
 
   .game-card {
@@ -179,22 +170,22 @@ a {
 
 @media (max-width: 480px) {
   .game-list {
-    grid-template-columns: 1fr; // Une colonne sur très petits écrans
+    grid-template-columns: 1fr;
   }
 }
 
 .platforms {
-  display: flex; /* Utiliser flexbox pour aligner les éléments */
-  flex-wrap: wrap; /* Permettre aux éléments de passer à la ligne si nécessaire */
-  margin-top: 10px; /* Espacement au-dessus des plateformes */
+  display: flex; 
+  flex-wrap: wrap; 
+  margin-top: 10px; 
 }
 
 .platforms a {
-  margin-right: 10px; /* Espacement entre les noms des plateformes */
-  text-decoration: none; /* Supprimer le soulignement des liens */
-  color: #007bff; /* Couleur des liens */
+  margin-right: 10px; 
+  text-decoration: none; 
+  color: #007bff; 
 }
 
 .platforms a:hover {
-  text-decoration: underline; /* Souligner au survol */
+  text-decoration: underline; 
 }

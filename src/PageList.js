@@ -41,8 +41,10 @@ function PageList() {
 
   const fetchGames = async () => {
     try {
+      const startDate = searchTerm ? "1999-01-01" : "2024-01-01";
+      const endDate = searchTerm ? "2023-12-31" : "2026-01-01"; 
       const response = await axios.get(
-        `https://api.rawg.io/api/games?key=${API_KEY}&dates=2024-01-01,2026-01-01&page=${page}`
+        `https://api.rawg.io/api/games?key=${API_KEY}&dates=${startDate},${endDate}&page=${page}`
       );
       setGames((prevGames) => [...prevGames, ...response.data.results]);
       if (page === 1) {
@@ -58,14 +60,26 @@ function PageList() {
     }
   };
 
+
   const handleShowMore = () => {
-    setPage((prevPage) => prevPage + 1); // Chargez plus de jeux
+    setPage((prevPage) => prevPage + 1);
   };
 
-  // Ajout de la déduplication
   const uniqueGames = Array.from(
     new Set(filteredGames.map((game) => game.id))
   ).map((id) => filteredGames.find((game) => game.id === id));
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    if (searchTerm.length === 0) {
+      return;
+    }
+    fetchGames();
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
   return (
     <div className="page-list">
@@ -90,7 +104,7 @@ function PageList() {
       </div>
       <div className="game-list">
         {uniqueGames.slice(0, page * 9).map((game) => (
-          <GameCard key={game.id} game={game} /> // Utilisez le composant GameCard
+          <GameCard key={game.id} game={game} />
         ))}
       </div>
       {showMore && (
